@@ -1,0 +1,73 @@
+﻿Git and GitHub notes
+
+
+* Git is a Distributed version control system and GitHub is a Repository hosting service.
+* git --version : This command is used to check the version of git in your terminal.
+* cd desktop: this command is used to go into desktop using terminal
+* mkdir [name of folder] : this is used to make folder
+* cd [folder name] :this is used to move to a folder.
+* git init: this command is used to create an empty git repository.And this will create hidden folder “.git” inside the empty repository.To check it you can use “ls -a” command if you use only “ls” command then you will not able to see it.
+* git branch -m [name of new branch]: this command is used to change  current branch name.
+* git branch:this command is used to check in which branch you are.
+* Here the name of your folder is the working directory and “.git” is a git repository.
+* Git object types:
+1. Blob:Represents files.
+2. Commit:Represents pointers to specific trees.
+3. Tree:Represents folders or directories.
+4. Annotated tag:stores extra metadata.
+* Hashes of git objects:Any variable length input ---> Hash function ---> fixed length hash.
+* “echo First(content) > 1.txt(file name)”: to put 1.txt file in git-repository folder.and First is content that is inside that folder i.e 1.txt.
+* To read the content of the folder:”cat 1.txt(file name)” this command is used.
+* In git there are three areas where file and folders could be located.
+(Working directory) (staging area[index]) (Git repository)
+* To verify whether your folder is in .git(hidden) repository then use “ls .git/objects/”.
+* “git add” command is used if you want to move your file from the working area to staging area.(. Means all or put file name after add)
+* Staging area to git repository then use “git commit -m ‘message’”
+* To jump into certain version of project use “git checkout”
+* To set author name and email use “git config --global user(author).name <Name>” and “git config --global user(author).email <Email>”
+* To verify whether the name and email are already configured or not, use “git config --list” command.
+* To check the history of all commits use the “git log” command.
+* Basic git commands:
+1. Git status : current state of git repository.
+2. Git add : add files to staging area.
+3. Git commit : write changes to git repository.
+4. Git log : history of changes.
+5. Git checkout : checkout commit(switch commits by using hash no or first 6 no) or branch(switch branch)
+* “git checkout [hash no of commit or first 6 no of it]” to switch commit.after this you will move to another state(previous state) of repository.you will see less files.
+* git checkout -b newBranchName: using this command it will create a new branch and switch to it i.e new branch(in only one command)
+* By doing “git checkout [current branch name]” you will see all your files.
+* File tracking statues:
+1. Untracked
+2. Unmodified
+3. Modified
+4. staged
+
+
+* If you want to modify the file then create another file by the same name and change its content using “echo” command.(echo “some changes” > 1.txt)(content in file is “some changes”)
+* If you want to insert some more content in the same file then use two greater than signs in echo command with the same name of file.(echo “other changes” >> 1.txt)(content in file is “some changes” ”other changes”)
+* Now after modifying if you check status it will show you modified.
+* Staging and committing changes using one command(combine git add and commit command): “git commit -a -m ‘message’ ”
+* After committing, the branch pointer moves to the last commit automatically.
+* “git merge <feature-branches>” ; his command used to merge branches with current branch. 
+* After merge press I to go to insert mode and enter [into the “name of branch” branch] and then press ESC to exit insert mode and then type “:wq”(stands for write and quit) and press enter.
+* “git log --graph”
+* “git branch -d [branch name]”:to delete branch
+* For push from local to remote….
+* “git remote -v” to verify the origin of repository.
+* Commands in the git page for more after you create a repository.
+* “git remote add origin https://github.com/jivneshsuryawanshi/git-repository.git” to add origin i.e remote repository.
+* * Push changes from local to main:”git push -u origin main”
+* For pull from remote to local…..
+* “git pull” to pull from remote to local
+* Ss
+* “ls .git/objects/” to check objects
+* git diff “file name”: to check what changes you have done in a file.
+* You cannot delete the same branch in which you are currently working.You have to change branch and delete it.
+* Git branch -d “nameOfbranch” : to delete a branch in one command.
+* Git reset --hard HEAD^: to undo previous commit.(In hard, last commit will be removed and code that is changed will also be removed.)
+* Git reset --soft “Id of previous commit i.e below head ”:this will also undo previous commit but keep changed code.
+* Git restore --staged “file name”: to bring file in its previous stage(in unstaged area).
+* Git restore “file name”:to remove file completely(use it after bringing file to unstaged area.)
+* To sync remote and local commit history:git pull
+* To change a small part of an already committed file without recommit with message:First change your code in file,bring it to staging area,then don’t commit by -m “message” instead of that use “git commit --amend” then save it using “esc+w+q and enter”.
+* *
